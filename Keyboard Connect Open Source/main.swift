@@ -11,6 +11,7 @@ import Cocoa
 func main(arguments: [String]?) {
     let application = NSApplication.shared
     let delegate = AppDelegate()
+
     application.delegate = delegate
 
     func quit(signal: Int32) {

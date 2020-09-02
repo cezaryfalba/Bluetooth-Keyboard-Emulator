@@ -37,11 +37,15 @@ func myCGEventTapCallBack(
 }
 
 var btKey: BTKeyboard?
+var statusItem: NSStatusItem?
+var connected: Bool = false
 
-class AppDelegate: NSObject, NSApplicationDelegate {  
-    private func applicationDidBecomeActive(notification: NSNotification) {
-        print("I'm active!")
-        
+class AppDelegate: NSObject, NSApplicationDelegate {
+    @objc func buttonAction() {
+        if !connected { self.connect() }
+    }
+    
+    func connect() {
         btKey = BTKeyboard()
 
         if !AXIsProcessTrusted() {
@@ -60,14 +64,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                             eventsOfInterest: eventMask,
                                             callback: myCGEventTapCallBack,
                                             userInfo: &btKey) {
+            connected = true
+
             let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0)
             CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, CFRunLoopMode.commonModes)
             CGEvent.tapEnable(tap: eventTap, enable: true)
         }
     }
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        let itemImage = NSImage(named: "keyboard")
+        itemImage?.isTemplate = true
+        
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        statusItem?.button?.image = itemImage
+        statusItem?.button?.action = #selector(buttonAction)
+    }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         print("Will terminate...")
+
         btKey?.terminate()
     }
 }

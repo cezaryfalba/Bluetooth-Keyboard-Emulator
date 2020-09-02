@@ -13,6 +13,7 @@
 		228F346F1DA3132100F264A0 /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F346E1DA3132100F264A0 /* KeyCodes.swift */; };
 		228F34731DA32B0900F264A0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F34721DA32B0900F264A0 /* main.swift */; };
 		228F34751DA32FE200F264A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F34741DA32FE200F264A0 /* AppDelegate.swift */; };
+		FD20D3A82500280100415715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD20D3A72500280100415715 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		228F34721DA32B0900F264A0 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		228F34741DA32FE200F264A0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F34761DA3304C00F264A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD20D3A72500280100415715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		228F345A1DA3014B00F264A0 /* Keyboard Connect Open Source */ = {
 			isa = PBXGroup;
 			children = (
+				FD20D3A72500280100415715 /* Assets.xcassets */,
 				228F34721DA32B0900F264A0 /* main.swift */,
 				228F34741DA32FE200F264A0 /* AppDelegate.swift */,
 				228F34681DA3016200F264A0 /* BTKeyboard.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228F346B1DA302F600F264A0 /* SerialPortDictionary.plist in Resources */,
+				FD20D3A82500280100415715 /* Assets.xcassets in Resources */,
 				228F346D1DA310BD00F264A0 /* HIDReportDescriptor.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
